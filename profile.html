@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profiles - Pink Theme (Editable)</title>
+
+    <style>
+        
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fce4ec; 
+            color: #333;
+        }
+        
+        
+        header { 
+            background-color: #110e0f; 
+            color: white; 
+            padding: 1em 0; 
+            text-align: center; 
+        }
+        nav { background-color: #ec407a; }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; padding: 12px 18px; display: inline-block; font-weight: bold; }
+        nav ul li a:hover { background-color: #d81b60; }
+
+        
+        main {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            gap: 40px;
+        }
+
+        
+        .left-column {
+            flex: 1; 
+            background-color: #d81b60; 
+            padding: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 30px;
+        }
+        
+        .profile-card {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 40px; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-photo-left {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid #ff80ab; 
+        }
+
+        .card-text h3 {
+            margin: 0;
+            color: #d81b60;
+            font-size: 1.2em;
+        }
+
+        .card-text p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        
+        .right-column {
+            flex: 1.5; 
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ff80ab;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .right-column h2 {
+            font-size: 2.5em;
+            color: #d81b60; 
+            margin: 0;
+        }
+
+        
+        .right-column p {
+            text-align: justify;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        
+        .edit-button {
+            background-color: #ff80ab; 
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+        }
+
+        .edit-button:hover {
+            background-color: #d81b60; 
+        }
+
+        .acknowledgment-card {
+            display: flex;
+            align-items: center;
+            background-color: #fce4ec; 
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .profile-photo-right {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid #d81b60;
+        }
+        
+        .ack-text h3 {
+            margin: 0;
+            color: #d81b60;
+            font-size: 1.1em;
+        }
+
+        .ack-text p {
+            margin: 5px 0 0;
+            font-size: 1em;
+            color: #444;
+        }
+
+        
+        .student-details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        .student-details-table th, 
+        .student-details-table td {
+            border: 1px solid #ff80ab; 
+            padding: 10px 15px;
+            text-align: left;
+        }
+
+        .student-details-table th {
+            background-color: #d81b60; 
+            color: white;
+            font-weight: bold;
+            width: 30%; 
+        }
+
+        .student-details-table tr:nth-child(even) {
+            background-color: #f8f0f3; 
+        }
+        
+        
+        footer { 
+            background-color: #333; 
+            color: white; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Smart Student Profile Portal</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="subjects.html">Subjects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <div class="left-column">
+            <div class="profile-card-list">
+                
+                <div class="profile-card">
+                    <img src="student(1).jpg" alt="Profile 1" class="profile-photo-left">
+                    <div class="card-text">
+                        <h3>Saraa Siriwardana</h3>
+                        <p>SID-e1001</p>
+                        <p>Bachelor of science</p>
+                        <p>4 year</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <img src="student(2).jpg" alt="Profile 2" class="profile-photo-left">
+                    <div class="card-text">
+                        <h3>John Smith</h3> 
+                        <p>SID-e1002</p>
+                        <p>Bachelor of (BA)</p>
+                        <p>4 year</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <img src="Student(3).jpg" alt="Profile 3" class="profile-photo-left">
+                    <div class="card-text">
+                        <h3>Priya Sharma</h3> 
+                        <p>SID-e1003</p>
+                        <p>Bachelor of Business Administration(BBA)</p>
+                        <p>4 year</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <img src="Student(4).jpg" alt="Profile 4" class="profile-photo-left">
+                    <div class="card-text">
+                        <h3>Ali Hassan</h3>
+                        <p>SID-e1004</p>
+                        <p>Bachelor of Engineering(BEng)</p>
+                        <p>4 year</p> 
+                    </div>
+                </div>
+                
+                <div class="profile-card">
+                    <img src="student(5).jpg" alt="Profile 5" class="profile-photo-left">
+                    <div class="card-text">
+                        <h3>Emma Brown</h3>
+                        <p>SID-e1005</p>
+                        <p>Bachelor of information technology</p>
+                        <p>4 year</p> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="right-column">
+            
+            <div class="header-section">
+                 <h2 id="programNameHeader">Bachelor of Engineering (BEng)</h2>
+                 <button class="edit-button" id="editButton">Edit Details</button>
+            </div>
+            
+            <p id="studentDetailsParagraph">
+                Oliver James Thompson (SID-e1004) is a dedicated Bachelor of Engineering student. Expected to graduate in December 2025, he has maintained a strong academic record (GPA: 1.4) and gained valuable practical experience through an internship at ABC Constraction Company. His technical skills include proficiency in CAD (Computer-Aided Design), Mathematical & Analytical Skills, and he actively showcases his project work in an online portfolio.
+            </p>
+
+            <div class="acknowledgment-card">
+                <img src="student(6).jpg" alt="Stakeholder Photo" class="profile-photo-right">
+                <div class="ack-text">
+                    <h3 id="ackStudentName">Oliver James Thompson</h3>
+                    <p>Project Lead / Home Automaation System</p>
+                </div>
+            </div>
+
+            <table class="student-details-table">
+                <tr>
+                    <th>Name</th>
+                    <td id="nameValue">Oliver James Thompson</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td id="ageValue">22</td>
+                </tr>
+                <tr>
+                    <th>Contact Number</th>
+                    <td id="contactValue">+94 77 123 4567</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td id="emailValue">Oliver.eng@uni.edu</td>
+                </tr>
+                <tr>
+                    <th>Degree Name</th>
+                    <td id="degreeNameValue">Bachelor of Engineering (BEng)</td>
+                </tr>
+                <tr>
+                    <th>GPA</th>
+                    <td id="gpaValue">1.4</td>
+                </tr>
+                <tr>
+                    <th>Experience</th>
+                    <td id="experienceValue">Internship at ABC Construction Company (6 months)</td>
+                </tr>
+                <tr>
+                    <th>Soft Skills</th>
+                    <td id="softSkillsValue">Teamwork, Problem Solving, Technical Communication, Adaptability</td>
+                </tr>
+                <tr>
+                    <th>Technical Skills</th>
+                    <td id="technicalSkillsValue">CAD (Computer-Aided Design), Mathematical & Analytical Skills, MATLAB, AutoCAD</td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Smart Student Profile Portal</p>
+    </footer>
+
+    <script>
+        document.getElementById('editButton').addEventListener('click', function() {
+            
+            const currentName = document.getElementById('nameValue').textContent;
+            const currentAge = document.getElementById('ageValue').textContent;
+            const currentContact = document.getElementById('contactValue').textContent;
+            const currentEmail = document.getElementById('emailValue').textContent;
+            const currentDegree = document.getElementById('degreeNameValue').textContent;
+            const currentGPA = document.getElementById('gpaValue').textContent;
+            const currentExperience = document.getElementById('experienceValue').textContent;
+            const currentSoftSkills = document.getElementById('softSkillsValue').textContent;
+            const currentTechnicalSkills = document.getElementById('technicalSkillsValue').textContent;
+            const currentSummary = document.getElementById('studentDetailsParagraph').textContent.trim();
+
+            
+            const newName = prompt('Enter New Name:', currentName);
+            const newAge = prompt('Enter New Age:', currentAge);
+            const newContact = prompt('Enter New Contact Number:', currentContact);
+            const newEmail = prompt('Enter New Email:', currentEmail);
+            const newDegree = prompt('Enter New Degree Name:', currentDegree);
+            const newGPA = prompt('Enter New GPA (e.g., 3.8):', currentGPA);
+            const newExperience = prompt('Enter New Experience:', currentExperience);
+            const newSoftSkills = prompt('Enter New Soft Skills (comma separated):', currentSoftSkills);
+            const newTechnicalSkills = prompt('Enter New Technical Skills (comma separated):', currentTechnicalSkills);
+            const newSummary = prompt('Enter New Student Summary:', currentSummary);
+
+            
+            if (newName !== null) {
+                document.getElementById('nameValue').textContent = newName;
+                document.getElementById('ackStudentName').textContent = newName;
+            }
+            if (newAge !== null) {
+                document.getElementById('ageValue').textContent = newAge;
+            }
+            if (newContact !== null) {
+                document.getElementById('contactValue').textContent = newContact;
+            }
+            if (newEmail !== null) {
+                document.getElementById('emailValue').textContent = newEmail;
+            }
+            if (newDegree !== null) {
+                document.getElementById('degreeNameValue').textContent = newDegree;
+                document.getElementById('programNameHeader').textContent = newDegree; 
+            }
+            if (newGPA !== null) {
+                document.getElementById('gpaValue').textContent = newGPA;
+            }
+            if (newExperience !== null) {
+                document.getElementById('experienceValue').textContent = newExperience;
+            }
+            if (newSoftSkills !== null) {
+                document.getElementById('softSkillsValue').textContent = newSoftSkills;
+            }
+            if (newTechnicalSkills !== null) {
+                document.getElementById('technicalSkillsValue').textContent = newTechnicalSkills;
+            }
+            if (newSummary !== null) {
+                
+                document.getElementById('studentDetailsParagraph').textContent = newSummary;
+            }
+
+            alert('Profile details updated successfully!');
+        });
+    </script>
+    
+</body>
+</html>

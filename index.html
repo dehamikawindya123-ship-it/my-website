@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Smart Student Profile Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    
+    <style>
+        
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f4; 
+        }
+        
+       
+        .top-bar {
+            background-color: #0d1a29; 
+            color: #ccc;
+            padding: 8px 0;
+            font-size: 0.9em;
+        }
+        .top-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .top-bar a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        
+        nav { 
+            background-color: #333; 
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ff6600; 
+            align-items: center;
+        }
+        .logo i {
+            margin-right: 5px;
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+        }
+        nav ul li { 
+            display: inline; 
+            margin: 0 10px; 
+        }
+        nav ul li a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 15px; 
+            display: inline-block; 
+            font-weight: 500;
+        }
+        nav ul li a:hover { 
+            color: #ff6600; 
+        }
+
+        
+        .hero-section {
+            background-image: url('home.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 70vh; 
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: 1;
+        }
+
+        .hero-text-content {
+            z-index: 2; 
+            color: white;
+            max-width: 1200px;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .hero-text-content h1 {
+            font-size: 3.5em;
+            max-width: 600px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+
+        .hero-text-content p {
+            font-size: 1.1em;
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        
+        .btn-get-started {
+            background-color: #ff6600; 
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        .btn-get-started:hover {
+            background-color: #e65c00;
+            
+        }
+        
+        
+        .main-cta {
+            text-align: center; 
+            margin-top: 40px; 
+        }
+
+
+        
+        main {
+            padding: 0 20px 60px; 
+            max-width: 1200px;
+            margin: 0 auto;
+            transform: translateY(-80px); 
+            z-index: 3; 
+            position: relative;
+        }
+        
+        .feature-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .card {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .card h3 {
+            font-size: 1.4em;
+            color: #000;
+            margin-top: 0;
+        }
+
+        
+        .card p {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            text-align: justify; 
+        }
+
+        .btn-join {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #ff6600;
+            padding: 8px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-join:hover {
+            background-color: #ff6600;
+            color: white;
+        }
+        
+        
+        footer { 
+            background-color: #333; 
+            color: white; 
+            text-align: center; 
+            padding: 20px 0; 
+            width: 100%; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <span>+94 00 000 0000</span>
+                <a href="mailto:support@studentportal.edu">support@studentportal.edu</a>
+            </div>
+        </div>
+    </div>
+    
+    <nav>
+        <div class="navbar-content">
+            <div class="logo"><i class="fas fa-graduation-cap"></i> Education</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="subjects.html">Subjects</a></li>
+                <li><a href="contact.html">Contact</a></li> 
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="hero-section">
+        <div class="hero-text-content">
+            <h1>Smart Student Profile Portal</h1>
+            <h2><span id="greeting"></span></h2> 
+            <p>
+                Welcome to the Smart Student Profile Portal, your all-in-one digital platform for managing your academic life. This innovative web portal is designed to streamline your educational journey, providing a centralized and secure hub for all your academic records, achievements, and essential information.
+            </p>
+            
+        </div>
+    </div>
+
+    <main>
+        <div class="feature-cards">
+            
+            <div class="card">
+                <h3>Learn Online Courses</h3>
+                <p>
+                    Usage of the internet is becoming more common due to rapid advancement of technology and the need for flexible learning options globally.
+                </p>
+                <a href="#" class="btn-join">Join Now</a>
+            </div>
+            
+            <div class="card">
+                <h3>Learn Diplomas</h3>
+                <p>
+                   Diplomas are generally more vocational or technically oriented than bachelor's degrees, concentrating on imparting specific, job-ready skills in a particular field.
+                </p>
+                <a href="#" class="btn-join">Join Now</a>
+            </div>
+            
+            <div class="card">
+                <h3>Learn Certificate course</h3>
+                <p>
+                   Certificate programs are typically centered around practical, job-oriented skills and knowledge in a niche subject.
+                </p>
+                <a href="#" class="btn-join">Join Now</a>
+            </div>
+            
+        </div>
+
+        <div class="main-cta">
+             <a href="#" class="btn-get-started">GET STARTED</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Smart Student Profile Portal</p>
+    </footer>
+
+    <script>
+        function displayTimeBasedGreeting() {
+            const date = new Date();
+            const hour = date.getHours();
+            let greeting;
+
+            if (hour >= 5 && hour < 12) {
+                greeting = "Good Morning! ☀️";
+            } else if (hour >= 12 && hour < 17) {
+                greeting = "Good Afternoon! ☕";
+            } else {
+                greeting = "Good Evening! 🌙";
+            }
+
+            
+            document.getElementById('greeting').textContent = greeting;
+        }
+
+        
+        displayTimeBasedGreeting();
+    </script>
+
+</body>
+</html>

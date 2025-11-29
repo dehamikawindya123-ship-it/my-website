@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects - Smart Student Profile Portal</title>
+    <link rel="stylesheet" href="css/subject.css"> 
+
+    <style>
+        
+        
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #333; color: white; padding: 1em 0; text-align: center; }
+        nav { background-color: #1b52d2; }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; padding: 12px 18px; display: inline-block; font-weight: bold; }
+        nav ul li a:hover { background-color: #7f8ce3; }
+        main { padding: 40px; text-align: center; }
+        footer { background-color: #333; color: white; text-align: center; padding: 10px 0; position: static;  width: 100%; margin-top: 40px;}
+
+        
+       
+        .card-container {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 20px; 
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .subject-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px; 
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .subject-card h3 {
+            color: #007bff;
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        
+        .subject-card p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            text-align: justify; 
+        }
+        
+        .subject-card strong {
+            display: inline-block;
+            width: 100px;
+            color: #131111;
+        }
+        
+        .subject-credit {
+            font-weight: bold;
+            color: #242eeb; 
+        }
+        
+        
+        #calculate-button { 
+            background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; transition: background-color 0.3s; 
+        }
+        #calculate-button:hover { background-color: #0056b3; }
+        #total-credits-display { margin-top: 20px; font-size: 1.3em; font-weight: bold; color: #4CAF50; padding: 10px; display: block; }
+        
+        
+        .subject-table {
+            width: 80%;
+            max-width: 900px;
+            margin: 40px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            text-align: left;
+        }
+        
+        .subject-table th, .subject-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+        }
+        
+        .subject-table th {
+            background-color: #1b52d2; 
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .subject-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .subject-table tr:hover {
+            background-color: #e0eaff; 
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Smart Student Profile Portal</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="subjects.html">Subjects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Enrolled Subjects (year 4)</h2>
+        
+        <div class="card-container">
+            
+            <div class="subject-card">
+                <img src="The-Best-Future-Programming-Languages-For-Web-Development-banner.jpg" alt="Programming" width="300" height="300">
+                <h3>Introduction to Programming</h3>
+                <p><strong>Description:</strong> Programming design involves planning the logic and structure of a program before writing the code to ensure it is efficient, maintainable, and scalable. It can refer to high-level methodologies like top-down design, or low-level, reusable solutions to common problems known as design patterns. </p>
+                <p><strong>Code:</strong> CS101</p>
+                <p><strong>Credits:</strong> <span class="credits subject-credit">3</span></p>
+            </div>
+            
+            <div class="subject-card">
+                <img src="depositphotos_382819476-stock-photo-silhouettes-two-businessmen-shaking-hands.jpg" alt="Business" width="300" height="300">
+                <h3>Business</h3>
+                <p><strong>Description:</strong> equips individuals with practical, real-world skills, fosters an entrepreneurial mindset, and prepares them for diverse leadership and management roles in an interconnected global economy. </p>
+                <p><strong>Code:</strong> MA102</p>
+                <p><strong>Credits:</strong> <span class="credits subject-credit">4</span></p>
+            </div>
+            
+            <div class="subject-card">
+                <img src="shutterstock_2005747523-scaled-e1694817366679-1.jpg" alt="Applied Physics" width="300" height="300">
+                <h3>Applied Physics</h3>
+                <p><strong>Description:</strong> Applied science is the application of existing scientific knowledge and theoretical principles to solve practical problems, develop new technologies, or invent useful products. Unlike pure science (or theoretical science), which aims to understand the fundamental laws of nature for knowledge's sake, applied science is goal-oriented and focused on practical outcomes.</p>
+                <p><strong>Code:</strong> PH103</p>
+                <p><strong>Credits:</strong> <span class="credits subject-credit">3</span></p>
+            </div>
+            
+            <div class="subject-card">
+                <img src="data-structures-and-algorithms-1200x900.jpg" alt="Data Structures" width="300" height="300">
+                <h3>Data Structures and Algorithms</h3>
+                <p><strong>Description:</strong> Data structures are ways of organizing data, while algorithms are sequences of steps to solve a problem efficiently using those structures. Various image resources are available for visual representations of these concepts.</p>
+                <p><strong>Code:</strong> CS205</p>
+                <p><strong>Credits:</strong> <span class="credits subject-credit">4</span></p>
+            </div>
+            
+            <div class="subject-card">
+                <img src="effective-tips-to-improve-your-business-communication-skills.jpg" alt="Communication Skills" width="300" height="300">
+                <h3>Communication Skills</h3>
+                <p><strong>Description:</strong> Communication skills are the abilities used to accurately and effectively convey and receive information, ideas, and emotions between individuals or groups.</p>
+                <p><strong>Code:</strong> CM201</p>
+                <p><strong>Credits:</strong> <span class="credits subject-credit">2</span></p>
+            </div>
+
+        </div>
+        
+        <h2>Subject Credit Summary</h2>
+        <table class="subject-table" id="credits-table">
+            <thead>
+                <tr>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CS101</td>
+                    <td>Introduction to Programming</td>
+                    <td class="table-credits">3</td>
+                </tr>
+                <tr>
+                    <td>MA102</td>
+                    <td>Business</td>
+                    <td class="table-credits">4</td>
+                </tr>
+                <tr>
+                    <td>PH103</td>
+                    <td>Applied Physics</td>
+                    <td class="table-credits">3</td>
+                </tr>
+                <tr>
+                    <td>CS205</td>
+                    <td>Data Structures and Algorithms</td>
+                    <td class="table-credits">4</td>
+                </tr>
+                <tr>
+                    <td>CM201</td>
+                    <td>Communication Skills</td>
+                    <td class="table-credits">2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" style="text-align: right; font-weight: bold; background-color: #e6e6e6;">Total Credits:</td>
+                    <td id="table-total-credits" style="font-weight: bold; background-color: #e6e6e6; text-align: center;">0</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <button id="calculate-button">Calculate Total Credits</button> 
+        <div id="total-credits-display">Click the button to calculate total credits.</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Smart Student Profile Portal</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const calculateButton = document.getElementById('calculate-button');
+            const totalDisplay = document.getElementById('total-credits-display');
+            const tableTotalDisplay = document.getElementById('table-total-credits');
+
+            calculateButton.addEventListener('click', function() {
+                
+                const creditElements = document.querySelectorAll('.subject-table .table-credits');
+                let totalCredits = 0;
+
+                
+                creditElements.forEach(function(element) {
+                    
+                    const creditValue = parseInt(element.textContent.trim(), 10);
+                    if (!isNaN(creditValue)) {
+                        totalCredits += creditValue;
+                    }
+                });
+
+                
+                totalDisplay.textContent = `Total Credits Registered: ${totalCredits}`;
+                tableTotalDisplay.textContent = totalCredits;
+            });
+        });
+    </script>
+</body>
+</html>

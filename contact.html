@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Smart Student Profile Portal</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+
+    <style>
+        
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+        }
+        
+        
+        header { 
+            background-color: #333; 
+            color: white; 
+            padding: 1em 0; 
+            text-align: center; 
+        }
+        nav { background-color: #eeb519;  }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; padding: 12px 18px; display: inline-block; font-weight: bold; }
+        nav ul li a:hover { background-color: #d6cc12;  }
+
+        
+        .hero-contact {
+            background-color: #053c50; 
+            color: white;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .hero-content {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            align-items: center;
+        }
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+            position: relative; 
+        }
+        .orange-shape {
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 250px;
+            height: 250px;
+            background-color: #ff6600;
+            border-radius: 0 0 50% 0; 
+            z-index: 0; 
+            opacity: 0.8;
+        }
+        .hero-text h2 {
+            font-size: 3.5em; 
+            margin-top: 0;
+            margin-bottom: 20px;
+            z-index: 1;
+            position: relative;
+        }
+        .hero-text p {
+            max-width: 450px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            z-index: 1;
+            position: relative;
+        }
+        .hero-image {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.1); 
+            min-height: 350px;
+            border-radius: 8px;
+            background-image: url('contact.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        
+        .contact-cards-section {
+            padding: 60px 20px 20px; 
+            background-color: #ffffff;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .contact-card {
+            background-color: #ffffff;
+            flex: 1;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            min-height: 200px; 
+            border-top: 4px solid #f9c60e; 
+        }
+        .card-icon {
+            font-size: 2em; 
+            color: #f9c60e; 
+            margin-bottom: 15px;
+            display: block;
+        }
+        .contact-card h3 {
+            font-size: 1.3em;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .contact-card p {
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .contact-card a {
+            color: #007bff; 
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        
+        
+        .form-section {
+            padding: 40px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f4f4f4; 
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+
+        .form-section h3 {
+            font-size: 2em;
+            color: #053c50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px; 
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; 
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus {
+            border-color: #eeb519;
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-button {
+            background-color: #ff6600; 
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #cc5200; 
+        }
+        
+        
+        .quick-links {
+            max-width: 1200px;
+            margin: 60px auto 60px; 
+            padding: 20px;
+            text-align: center;
+        }
+        .quick-links h3 {
+            font-size: 1.6em;
+            color: #053c50; 
+            margin-bottom: 25px;
+        }
+        .link-group {
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+            align-items: center;
+            flex-wrap: wrap; 
+        }
+        .contact-link {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        .contact-link i {
+            margin-right: 10px;
+            font-size: 1.5em; 
+        }
+        .contact-link:hover {
+            color: #f9c60e; 
+        }
+        
+        
+        .whatsapp-icon { color: #25D366; }
+        .email-icon { color: #D44638; }
+        .facebook-icon { color: #1877F2; }
+
+        
+        footer { 
+            background-color: #333; 
+            color: white; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Smart Student Profile Portal</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="subjects.html">Subjects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-contact">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="orange-shape"></div>
+                <h2>Contact</h2>
+                <p>
+                    Got a question about your academic status or need technical support? 
+                    You might find the answer in our Help Centre. Otherwise, see all the ways you can speak to our team below.
+                </p>
+                <p style="font-size: 0.9em;">
+                    <a href="#" style="color: #e87619; text-decoration: underline;">Go to Help Centre</a>
+                </p>
+            </div>
+            <div class="hero-image">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-cards-section">
+        <div class="cards-container">
+            <div class="contact-card">
+                <span class="card-icon">🎓</span>
+                <h3>Existing Students</h3>
+                <p>
+                    If you are an enrolled student, your dedicated academic advisor can answer your questions directly.
+                </p>
+                <a href="#">Contact Advisor →</a>
+                </div>
+            
+            <div class="contact-card">
+                <span class="card-icon">🛠️</span>
+                <h3>Technical Support</h3>
+                <p>
+                    Having trouble logging in, accessing courses, or using the portal features? Speak to our tech team.
+                </p>
+                <a href="#">Contact Support →</a>
+            </div>
+            
+            <div class="contact-card">
+                <span class="card-icon">💡</span>
+                <h3>New Enquiries</h3>
+                <p>
+                    Are you a prospective student interested in course details or admission requirements? 
+                </p>
+                <a href="#">Contact Admissions →</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>Send Us a Direct Message</h3>
+        <form action="/submit-contact" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="email-address">Email Address</label>
+                <input type="email" id="email-address" name="emailAddress" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit Enquiry</button>
+        </form>
+    </div>
+    <div class="quick-links">
+        <h3>Quick Ways to Reach Us</h3>
+        <div class="link-group">
+            
+            <a href="https://wa.me/94718307055" class="contact-link" target="_blank">
+                <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+                +94 71 830 7055
+            </a>
+            
+            <a href="mailto:support@studentportal.edu" class="contact-link">
+                <i class="fa-solid fa-envelope email-icon"></i>
+                support@studentportal.edu
+            </a>
+            
+            <a href="https://facebook.com/YourStudentPortalPage" class="contact-link" target="_blank">
+                <i class="fa-brands fa-facebook facebook-icon"></i>
+                @YourStudentPortalPage
+            </a>
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Smart Student Profile Portal</p>
+    </footer>
+
+</body>
+</html>
